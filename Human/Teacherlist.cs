@@ -16,27 +16,35 @@ namespace Human
         }
         public void Remove(Teacher teacher)
         {
-          
-                if (counter == 0)
-                {
-                    Console.WriteLine("List is empty!!!");
-                }
-                else if (teachers.Contains(teacher) )
-                {
-                    teachers.Remove(teacher);
-                    counter--;
-                    Console.WriteLine("Successfully revomed!");
-                }
-            
-            
-            
-        }
-        public  void GetInfo()
-        {
-            foreach (Teacher a in teachers)
+
+            if (counter == 0)
             {
-                Console.WriteLine("Teacher list: ");
-                a.GetInfo();
+                Console.WriteLine("List is empty!!!");
+            }
+            else if (teachers.Contains(teacher))
+            {
+                teachers.Remove(teacher);
+                counter--;
+                Console.WriteLine("Successfully revomed!");
+            }
+
+
+
+        }
+        public void GetInfo()
+        {
+            Console.WriteLine("Teacher list: ");
+            if (counter == 0)
+            {
+                Console.WriteLine("Empty");
+            }
+            else
+            {
+                foreach (Teacher a in teachers)
+                {
+
+                    a.GetInfo();
+                }
             }
         }
 

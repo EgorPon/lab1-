@@ -8,12 +8,11 @@ namespace Human
     {
         private int counter;
 
-        private List<Student> student;
+        private List<Student> student = new List<Student>();
         public Teacher(string Name, string Surname, int Age, string Country, string Region, string City, string Street) : base(Name, Surname, Age, Country, Region, City, Street)
         {
             counter = 0;
 
-            student = new List<Student>();
         }
 
         public void Add(Student person)
@@ -40,17 +39,25 @@ namespace Human
         }
         public override void GetInfo()
         {
-            Console.WriteLine("Teacher: "); base.GetInfo();
+            Console.WriteLine("Teacher: "); 
+            base.GetInfo();
           
         }
         public void StudentInfo()
-        {   
-            Console.WriteLine("Students list: ");
-            foreach (Student a in student)
+        {
+            if (counter == 0)
             {
+                Console.WriteLine("Empty");
+            }
+            else
+            {
+                Console.WriteLine("Students list: ");
+                foreach (Student a in student)
+                {
 
-                a.GetInfo();
+                    a.GetInfo();
 
+                }
             }
 
         }

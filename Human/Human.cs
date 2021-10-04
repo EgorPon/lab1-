@@ -27,7 +27,7 @@ namespace Human
             get { return age; }
             set { age = value; }
         }
-        public Human() { }
+     
         public Human(string Name, string Surname, int Age, string Country, string Region, string City, string Street)
         {
             name = Name;
