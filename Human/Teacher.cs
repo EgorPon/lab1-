@@ -37,6 +37,7 @@ namespace Human
                 Console.WriteLine("Successfully revomed!");
             }
         }
+       
         public override void GetInfo()
         {
             Console.WriteLine("Teacher: "); 

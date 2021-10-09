@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Human
 {
@@ -28,8 +29,28 @@ namespace Human
                 Console.WriteLine("Successfully revomed!");
             }
 
+        }
+        public void Sort()
+        {
+            var result = from teacher in teachers
+                         orderby teacher.Surname, teacher.Name, teacher.Age descending
+                         select teacher;
+            Console.WriteLine("Sort: ");
+            foreach (Teacher u in result)
+                 u.GetInfo();
+                    
+        }
+        public void Find(string Surname)
+        {
+            foreach (Teacher i in teachers)
+            {
+                if (Surname == i.Surname)
+                {
+                   
+                    i.GetInfo();
 
-
+                }
+            }
         }
         public void GetInfo()
         {
